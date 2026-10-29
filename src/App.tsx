@@ -39,8 +39,11 @@ export function App() {
               </a>
             ))}
           </nav>
-          <button type="button" className="keychip" onClick={() => go('scales')} aria-label={`Current scale: ${scale.tonic} ${type.name}. Change it.`}>
+          <button type="button" className="keychip" onClick={() => go('scales')} aria-label={`Practice scale: ${scale.tonic} ${type.name}. Change it.`}>
             <span className="keychip__swatch" aria-hidden="true" />
+            <span className="keychip__label" aria-hidden="true">
+              Practice
+            </span>
             <span aria-hidden="true">
               <NoteName name={scale.tonic} /> {type.id === 'major' || type.id === 'minor' ? type.name.toLowerCase() : type.name}
             </span>

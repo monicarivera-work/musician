@@ -5,14 +5,15 @@ import { describeKeySignature, keyFromPc, keyLabel, type Mode, type MusicKey } f
 import { pitchClass } from '../theory/notes';
 import { extractChords } from '../theory/chord-text';
 import { estimateKeyFromChords } from '../theory/key-detect';
-import { confidenceWords, describeSong, tempoWords, type SongAnalysis } from '../songs/song-analysis';
+import { confidenceWords, describeSong, feltTempo, tempoWords, type SongAnalysis } from '../songs/song-analysis';
 import { useApp } from '../state/store';
 import { ChordBox } from './ChordBox';
 import { IconEdit, IconPlay } from './icons';
-import { Ladder } from './Ladder';
+import { Ladder, useLadderPointer } from './Ladder';
 import { ChordName, NoteName } from './NoteName';
 import { go } from './router';
 import { BottomSheet, Term } from './Term';
+import { useNarrow } from './useNarrow';
 import { usePlayer } from './usePlayer';
 
 const SOURCE_TAG: Record<SongAnalysis['source'], string> = {
@@ -35,13 +36,17 @@ const ROLE_WORD = {
 export function SongResult({ song }: { song: SongAnalysis }) {
   const { setSong, adoptKey } = useApp();
   const play = usePlayer();
+  const pointer = useLadderPointer();
+  const narrow = useNarrow();
   const d = useMemo(() => describeSong(song), [song]);
   const [keySheet, setKeySheet] = useState(false);
   const [editing, setEditing] = useState(false);
   const fromAudio = song.source === 'search' || song.source === 'listen' || song.source === 'file';
   const homeMidi = 48 + pitchClass(d.key.tonic);
   const confidence = song.keyOverride ? 1 : song.key.confidence;
-  const alt = song.key.alternatives[0];
+  const alts = song.keyOverride ? [] : song.key.alternatives.slice(0, 2);
+  const tempo = song.bpm !== undefined ? feltTempo(song.bpm) : null;
+  const run = [...d.scale.degrees.map((x) => homeMidi + x.semitones), homeMidi + 12];
 
   const marks: Partial<Record<number, ReactNode>> = {};
   for (const u of d.uses.slice(0, 10)) {
@@ -64,6 +69,11 @@ export function SongResult({ song }: { song: SongAnalysis }) {
   const setKey = (key: MusicKey) => {
     setSong({ ...song, keyOverride: key });
     setKeySheet(false);
+  };
+
+  const playRung = (midi: number) => {
+    pointer.point(midi);
+    void play.note(midi);
   };
 
   return (
@@ -98,10 +108,8 @@ export function SongResult({ song }: { song: SongAnalysis }) {
             </strong>
             , and <Term id={d.key.mode}>{d.key.mode}</Term> means it sounds {d.key.mode === 'major' ? 'bright and settled' : 'darker and moodier'}.
           </p>
-        </div>
-        <div className="sureness">
-          <div className="sureness__row">
-            <span className="sureness__word">
+          <p className="sureline">
+            <span>
               <Term id="confidence">How sure</Term>: <strong>{song.keyOverride ? 'Set by you' : confidenceWords(confidence)}</strong>
             </span>
             <span className="meter" aria-hidden="true">
@@ -109,16 +117,16 @@ export function SongResult({ song }: { song: SongAnalysis }) {
                 <span key={i} className={i < Math.max(1, Math.round(confidence * 5)) ? 'is-on' : ''} />
               ))}
             </span>
-          </div>
-          {!song.keyOverride && alt && (
-            <p className="small">
-              Could also be {keyLabel(alt.key)}
-              {alt.key.tonic === d.relative.tonic && alt.key.mode === d.relative.mode ? ', which uses the same notes with a different home.' : '.'}
-            </p>
-          )}
-          <button type="button" className="btn btn--small" onClick={() => setKeySheet(true)}>
-            <IconEdit size={18} /> {song.keyOverride ? 'Change key' : 'Not right? Change key'}
+            <button type="button" className="linkish" onClick={() => setKeySheet(true)}>
+              Change key
+            </button>
+          </p>
+        </div>
+        <div className="keyblock__side">
+          <button type="button" className="btn btn--go btn--big btn--block" onClick={singIt}>
+            Sing this scale
           </button>
+          <p className="fine">Practice it with your voice, note by note, and time the run.</p>
         </div>
       </div>
 
@@ -127,9 +135,10 @@ export function SongResult({ song }: { song: SongAnalysis }) {
           <Ladder
             scale={d.scale}
             homeMidi={homeMidi}
-            semitone={29}
+            semitone={narrow ? 20 : 29}
             marks={marks}
-            onPlay={play.note}
+            onPlay={playRung}
+            active={pointer.active}
             animateKey={`${song.id}-${d.key.tonic}-${d.key.mode}`}
             caption={
               <>
@@ -138,23 +147,51 @@ export function SongResult({ song }: { song: SongAnalysis }) {
               </>
             }
           />
-          <button type="button" className="btn btn--quiet" onClick={() => play.scale([...d.scale.degrees.map((x) => homeMidi + x.semitones), homeMidi + 12])}>
+          <button
+            type="button"
+            className="btn btn--quiet"
+            onClick={() => {
+              pointer.run(run, 420);
+              void play.scale(run);
+            }}
+          >
             <IconPlay size={18} /> Play the scale
           </button>
         </div>
 
         <dl className="facts result__facts">
-          {song.bpm !== undefined && (
+          {alts.length > 0 && (
+            <div>
+              <dt>Other keys</dt>
+              <dd>
+                {alts.map((a, i) => (
+                  <span key={`${a.key.tonic}-${a.key.mode}`} className="value">
+                    {i > 0 && <span className="fine"> or </span>}
+                    <NoteName name={a.key.tonic} /> {a.key.mode}
+                  </span>
+                ))}
+                <span className="small">
+                  {alts[0].key.tonic === d.relative.tonic && alts[0].key.mode === d.relative.mode
+                    ? `${keyLabel(alts[0].key)} uses the same notes with a different home. `
+                    : ''}
+                  If one of these sounds more like home,{' '}
+                  <button type="button" className="linkish" onClick={() => setKeySheet(true)}>
+                    change the key
+                  </button>
+                  .
+                </span>
+              </dd>
+            </div>
+          )}
+          {tempo && (
             <div>
               <dt>
                 <Term id="tempo">Tempo</Term>
               </dt>
               <dd>
-                <span className="value num">About {Math.round(song.bpm)} BPM</span>
+                <span className="value num">About {tempo.felt} BPM</span>
                 <span className="small">
-                  {tempoWords(song.bpm)}.
-                  {song.bpm >= 120 && ` Or ${Math.round(song.bpm / 2)} if you tap along at half speed.`}
-                  {song.bpm < 80 && ` Or ${Math.round(song.bpm * 2)} if you tap twice as fast.`}
+                  {tempoWords(tempo.felt)}.{tempo.other && ` Or ${tempo.other} if you tap ${tempo.other > tempo.felt ? 'twice as fast' : 'at half speed'}.`}
                 </span>
               </dd>
             </div>

@@ -92,7 +92,7 @@ export function ProgressScreen() {
                       {formatTime(g.best.totalMs)}
                     </p>
                   </div>
-                  {g.recent.length > 1 && (
+                  {g.recent.length > 0 && (
                     <ol className="trend" aria-label={`Last ${g.recent.length} times, oldest first`}>
                       {g.recent.map((r) => (
                         <li
@@ -123,7 +123,7 @@ export function ProgressScreen() {
             })}
           </ul>
           <p className="fine" style={{ marginTop: 16 }}>
-            Shorter bars are faster runs. The yellow bar is your best.
+            Each bar is one run, oldest on the left; shorter is faster. The yellow bar is your best.
           </p>
           <button type="button" className="btn btn--quiet" style={{ marginTop: 24 }} onClick={() => setConfirm(true)}>
             Clear all times

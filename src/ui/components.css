@@ -99,8 +99,34 @@
 
 .ladder__changed {
   fill: var(--pointer);
-  stroke: var(--ink);
+  stroke: #131a2e;
   stroke-width: 1.2;
+}
+
+.ladder__changed-note {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 12px;
+  fill: #131a2e;
+}
+
+.ladder__side-solfa {
+  font-family: var(--font-display);
+  font-weight: 750;
+  font-size: 11px;
+  fill: var(--cobalt-ink);
+}
+
+.ladder__pointer line {
+  stroke: var(--pointer);
+  stroke-width: 6;
+}
+
+.ladder__pointer path {
+  fill: var(--pointer);
+  stroke: #131a2e;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
 }
 
 .ladder__side-label {
@@ -130,11 +156,18 @@
 
 .ladder__solfa {
   position: absolute;
-  left: calc(var(--col-x) + 8px);
-  top: -1.45em;
+  left: calc(var(--col-x) + 9px);
+  top: -1.3em;
   color: var(--on-cobalt);
-  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 650;
+  font-size: 1.0625rem;
   line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.ladder__row.is-home .ladder__solfa {
+  font-weight: 850;
 }
 
 .ladder__label {
@@ -229,14 +262,15 @@
 .mark-chord {
   display: inline-flex;
   align-items: center;
-  min-height: 26px;
-  padding: 0 7px;
+  min-height: 22px;
+  padding: 0 6px;
   border-radius: 3px;
   background: var(--role);
   color: #fff;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  line-height: 1;
 }
 
 .mark-chord.role--borrowed,
@@ -370,26 +404,27 @@
 }
 
 .fretboard__wood {
-  fill: #3a2a22;
+  fill: var(--paper-raised);
+  stroke: var(--ink);
+  stroke-width: 1.5;
 }
 
 .fretboard__inlay {
-  fill: #e9e2d0;
-  opacity: 0.85;
+  fill: var(--rule-strong);
 }
 
 .fretboard__fret {
-  stroke: #b9bec9;
-  stroke-width: 2;
+  stroke: var(--ink-3);
+  stroke-width: 1.5;
 }
 
 .fretboard__nut {
-  stroke: #ece6d6;
-  stroke-width: 6;
+  stroke: var(--ink);
+  stroke-width: 5;
 }
 
 .fretboard__string {
-  stroke: #d8dbe2;
+  stroke: var(--ink);
 }
 
 .fretboard__num {
@@ -403,8 +438,8 @@
 }
 
 .fretboard__dot circle {
-  fill: #fff;
-  stroke: #131a2e;
+  fill: var(--paper-raised);
+  stroke: var(--ink);
   stroke-width: 1.5;
 }
 
@@ -412,12 +447,17 @@
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 11.5px;
-  fill: #131a2e;
+  fill: var(--ink);
   pointer-events: none;
 }
 
 .fretboard__dot.is-home circle {
-  fill: var(--pointer);
+  fill: var(--cobalt);
+  stroke: var(--cobalt);
+}
+
+.fretboard__dot.is-home text {
+  fill: #fff;
 }
 
 .fretboard__dot:hover circle {

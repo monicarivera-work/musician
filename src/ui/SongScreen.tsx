@@ -32,12 +32,16 @@ export function SongScreen() {
   const { song, setSong, recent, forgetSong } = useApp();
   const [mode, setMode] = useState<InputMode>('search');
   const [status, setStatus] = useState<Status>({ kind: 'idle' });
+  const [expanded, setExpanded] = useState(false);
   const resultRef = useRef<HTMLDivElement>(null);
   const busy = status.kind === 'working';
+  // With a song on screen, the intake shrinks to one row so the result leads.
+  const compact = song.source !== 'example' && !expanded && status.kind === 'idle';
 
   const finish = (s: SongAnalysis) => {
     setSong(s);
     setStatus({ kind: 'idle' });
+    setExpanded(false);
     requestAnimationFrame(() => resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   };
 
@@ -117,6 +121,32 @@ export function SongScreen() {
 
   return (
     <div className="screen">
+      {compact ? (
+        <section className="intake-row" aria-labelledby="intake-h">
+          <h1 className="sr-only" id="intake-h">
+            Song
+          </h1>
+          <div className="seg seg--full intake-row__modes" role="group" aria-label="Put in another song">
+            {MODES.map(({ id, label, Icon }) => (
+              <button
+                key={id}
+                type="button"
+                className={id === 'search' ? 'intake-row__main' : 'intake-row__icon'}
+                aria-label={id === 'search' ? 'Search for another song' : `Another song: ${label.toLowerCase()}`}
+                title={label}
+                onClick={() => {
+                  setMode(id);
+                  setExpanded(true);
+                  if (id === 'search') requestAnimationFrame(() => document.getElementById('song-q')?.focus());
+                }}
+              >
+                <Icon size={20} />
+                {id === 'search' && <span>Another song</span>}
+              </button>
+            ))}
+          </div>
+        </section>
+      ) : (
       <section className="intake" aria-labelledby="intake-h">
         <h1 className="h1" id="intake-h">
           Put in a song
@@ -191,8 +221,9 @@ export function SongScreen() {
           </div>
         )}
       </section>
+      )}
 
-      <div ref={resultRef} className="result-anchor">
+      <div ref={resultRef} className={compact ? 'result-anchor result-anchor--tight' : 'result-anchor'}>
         <SongResult song={song} />
       </div>
 

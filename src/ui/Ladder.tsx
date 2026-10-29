@@ -1,7 +1,38 @@
-import type { CSSProperties, ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { mod12 } from '../theory/notes';
 import type { BuiltScale } from '../theory/scales';
 import { NoteName, spokenNote } from './NoteName';
+
+/**
+ * Drives the teacher's pointer on a ladder: point at one rung briefly, or walk
+ * it up a run in time with playback.
+ */
+export function useLadderPointer() {
+  const [active, setActive] = useState<number | null>(null);
+  const timers = useRef<number[]>([]);
+  const clear = useCallback(() => {
+    timers.current.forEach((t) => window.clearTimeout(t));
+    timers.current = [];
+  }, []);
+  useEffect(() => clear, [clear]);
+  const point = useCallback(
+    (midi: number, ms = 700) => {
+      clear();
+      setActive(midi);
+      timers.current.push(window.setTimeout(() => setActive(null), ms));
+    },
+    [clear],
+  );
+  const run = useCallback(
+    (midis: number[], stepMs: number) => {
+      clear();
+      midis.forEach((m, i) => timers.current.push(window.setTimeout(() => setActive(m), 30 + i * stepMs)));
+      timers.current.push(window.setTimeout(() => setActive(null), 30 + midis.length * stepMs + 250));
+    },
+    [clear],
+  );
+  return { active, point, run };
+}
 
 export interface SideKey {
   label: ReactNode;
@@ -25,6 +56,8 @@ interface LadderProps {
   /** Changing this replays the unrolling animation. */
   animateKey?: string;
   caption?: ReactNode;
+  /** MIDI number of the rung the pointer is on (the note being played). */
+  active?: number | null;
 }
 
 interface Rung {
@@ -62,7 +95,7 @@ const COL_W = 74;
 const JOIN = 4;
 
 /** The Modulator: a scale as a ladder whose rung spacing is the real distance between notes. */
-export function Ladder({ scale, homeMidi, span = 12, semitone = 30, marks, onPlay, showGaps = true, left, right, animateKey, caption }: LadderProps) {
+export function Ladder({ scale, homeMidi, span = 12, semitone = 30, marks, onPlay, showGaps = true, left, right, animateKey, caption, active }: LadderProps) {
   const pad = 22;
   const height = span * semitone + pad * 2;
   const rungs = rungsFor(scale, homeMidi, span, pad, semitone);
@@ -98,6 +131,14 @@ export function Ladder({ scale, homeMidi, span = 12, semitone = 30, marks, onPla
               <line x1={labelX - 6} x2="100%" y1={r.y} y2={r.y} className="ladder__lead" />
             </g>
           ))}
+          {rungs
+            .filter((r) => r.midi === active)
+            .map((r) => (
+              <g key="pointer" className="ladder__pointer">
+                <line x1={colX} x2={colX + COL_W} y1={r.y} y2={r.y} />
+                <path d={`M${colX - 16} ${r.y - 8} L${colX + 3} ${r.y} L${colX - 16} ${r.y + 8} Z`} />
+              </g>
+            ))}
         </svg>
 
         {rungs.map((r) => (
@@ -166,21 +207,34 @@ function SideColumn({
   semitone: number;
 }) {
   const mainPcs = new Set(main.degrees.map((d) => d.pc));
-  const marks: { y: number; changed: boolean; home: boolean }[] = [];
+  const marks: { y: number; changed: boolean; home: boolean; note: string; solfa: string }[] = [];
   for (let m = homeMidi - 1; m <= homeMidi + span + 1; m++) {
     const d = scale.degrees.find((s) => s.pc === mod12(m));
     if (!d) continue;
     const y = pad + (homeMidi + span - m) * semitone;
-    if (y < 2 || y > span * semitone + pad * 2 - 2) continue;
-    marks.push({ y, changed: !mainPcs.has(d.pc), home: d.step === 1 });
+    if (y < 8 || y > span * semitone + pad * 2 - 8) continue;
+    marks.push({ y, changed: !mainPcs.has(d.pc), home: d.step === 1, note: d.label, solfa: d.solfa });
   }
+  const cx = x + SIDE_W / 2;
   return (
     <g>
       <rect x={x} y={0} width={SIDE_W} height={span * semitone + pad * 2} className="ladder__side" />
       {marks.map((mk) => (
         <g key={mk.y}>
           <line x1={x} x2={x + SIDE_W} y1={mk.y} y2={mk.y} className={mk.home ? 'ladder__side-rung is-home' : 'ladder__side-rung'} />
-          {mk.changed && <rect x={x + 4} y={mk.y - 5} width={SIDE_W - 8} height={10} className="ladder__changed" />}
+          {mk.home && !mk.changed && (
+            <text x={cx} y={mk.y - 4} textAnchor="middle" className="ladder__side-solfa">
+              {mk.solfa}
+            </text>
+          )}
+          {mk.changed && (
+            <>
+              <rect x={x + 2} y={mk.y - 9} width={SIDE_W - 4} height={18} rx={2} className="ladder__changed" />
+              <text x={cx} y={mk.y + 4.5} textAnchor="middle" className="ladder__changed-note">
+                {mk.note}
+              </text>
+            </>
+          )}
         </g>
       ))}
     </g>

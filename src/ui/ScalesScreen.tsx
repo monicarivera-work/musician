@@ -6,7 +6,7 @@ import { buildScale, describeGap, SCALE_TYPES, scaleType, type ScaleId } from '.
 import { useApp } from '../state/store';
 import { Fretboard } from './Fretboard';
 import { IconPlay } from './icons';
-import { Ladder } from './Ladder';
+import { Ladder, useLadderPointer } from './Ladder';
 import { ChordName, NoteName } from './NoteName';
 import { go } from './router';
 import { Staff } from './Staff';
@@ -21,6 +21,7 @@ const ROLE_WORD = { home: 'Home', away: 'Away', tension: 'Tension', borrowed: 'B
 export function ScalesScreen() {
   const { scale: choice, setScale } = useApp();
   const play = usePlayer();
+  const pointer = useLadderPointer();
   const scale = useMemo(() => buildScale(choice.tonic, choice.scaleId), [choice]);
   const type = scaleType(choice.scaleId);
   const isKey = choice.scaleId === 'major' || choice.scaleId === 'minor';
@@ -101,7 +102,15 @@ export function ScalesScreen() {
             <button type="button" className="btn btn--go btn--big" onClick={() => go('sing')}>
               Sing this scale
             </button>
-            <button type="button" className="btn btn--big" onClick={() => play.scale([...run, ...[...run].reverse().slice(1)])}>
+            <button
+              type="button"
+              className="btn btn--big"
+              onClick={() => {
+                const upDown = [...run, ...[...run].reverse().slice(1)];
+                pointer.run(upDown, 420);
+                void play.scale(upDown);
+              }}
+            >
               <IconPlay size={18} /> Play it
             </button>
           </div>
@@ -112,7 +121,11 @@ export function ScalesScreen() {
             scale={scale}
             homeMidi={homeMidi}
             semitone={30}
-            onPlay={play.note}
+            onPlay={(m) => {
+              pointer.point(m);
+              void play.note(m);
+            }}
+            active={pointer.active}
             animateKey={`${choice.tonic}-${choice.scaleId}`}
             left={
               neighbors
@@ -151,7 +164,7 @@ export function ScalesScreen() {
           On your guitar
         </h2>
         <p className="small section__intro">
-          Every place this scale lives on the first 15 frets, in standard tuning. Yellow dots are the home note. Tap a dot to hear it.
+          Every place this scale lives on the first 15 frets, in standard tuning. Blue dots are the home note. Tap a dot to hear it.
         </p>
         <Fretboard scale={scale} onPlay={play.note} />
       </section>

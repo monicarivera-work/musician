@@ -3,7 +3,7 @@ import type { MusicKey } from '../theory/keys';
 import type { ScaleId } from '../theory/scales';
 import type { Direction, Tolerance } from '../practice/run';
 import type { VocalRange } from '../practice/range';
-import { exampleSong, type SongAnalysis } from '../songs/song-analysis';
+import { effectiveKey, exampleSong, type SongAnalysis } from '../songs/song-analysis';
 import { load, save } from './persist';
 
 export interface ScaleChoice {
@@ -54,7 +54,12 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
 
   const setSong = useCallback((s: SongAnalysis) => {
     setSongState(s);
-    if (s.source !== 'example') setRecent((list) => [s, ...list.filter((x) => x.id !== s.id)].slice(0, 20));
+    if (s.source !== 'example') {
+      setRecent((list) => [s, ...list.filter((x) => x.id !== s.id)].slice(0, 20));
+      // The song you are looking at becomes the scale you practice.
+      const k = effectiveKey(s);
+      setScaleState({ tonic: k.tonic, scaleId: k.mode === 'major' ? 'major' : 'minor' });
+    }
   }, []);
 
   const forgetSong = useCallback(

@@ -129,6 +129,16 @@ export function tempoWords(bpm: number): string {
   return 'Fast and driving';
 }
 
+/**
+ * Beat trackers often lock onto double or half the speed people tap along to.
+ * Lead with the reading nearest a typical walking pulse and offer the other.
+ */
+export function feltTempo(bpm: number): { felt: number; other: number | null } {
+  const felt = [bpm / 2, bpm, bpm * 2].reduce((a, b) => (Math.abs(Math.log2(b / 100)) < Math.abs(Math.log2(a / 100)) ? b : a));
+  const other = felt < 90 ? felt * 2 : felt > 120 ? felt / 2 : null;
+  return { felt: Math.round(felt), other: other === null ? null : Math.round(other) };
+}
+
 export function confidenceWords(p: number): string {
   if (p >= 0.75) return 'Very likely';
   if (p >= 0.5) return 'Likely';
