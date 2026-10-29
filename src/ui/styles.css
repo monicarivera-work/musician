@@ -30,6 +30,10 @@
   --tension: #c63a22;
   --tension-ink: #a93019;
   --outside: #626982;
+  /* Fills behind white lettering (chord tags) stay deep in both schemes to keep 5:1+ contrast. */
+  --home-fill: #2b4bd8;
+  --away-fill: #1f7a5c;
+  --tension-fill: #c63a22;
 
   --tape: #131a2e;
   --on-tape: #f6f7f9;
@@ -51,6 +55,7 @@
   --band-h: 56px;
   --nav-h: 64px;
   --shadow-lift: 0 2px 0 var(--ink), 0 6px 14px -8px rgba(19, 26, 46, 0.45);
+  --shadow-sheet: 0 -10px 30px -10px rgba(19, 26, 46, 0.35);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -641,7 +646,7 @@ textarea.field {
   width: 46px;
   height: 28px;
   margin: 0;
-  border-radius: 999px;
+  border-radius: var(--radius);
   background: var(--rule-strong);
   position: relative;
   transition: background-color 160ms var(--ease-out);
@@ -655,9 +660,9 @@ textarea.field {
   left: 3px;
   width: 22px;
   height: 22px;
-  border-radius: 50%;
+  border-radius: 2px;
   background: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0 1.5px var(--ink);
   transition: transform 180ms var(--ease-out);
 }
 
@@ -816,7 +821,7 @@ textarea.field {
   border-top: 6px solid var(--cobalt);
   padding: var(--s5) var(--s5) calc(var(--s5) + env(safe-area-inset-bottom));
   animation: sheet-up 260ms var(--ease-out);
-  box-shadow: 0 -10px 30px -10px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-sheet);
 }
 
 @media (min-width: 720px) {
@@ -843,21 +848,25 @@ textarea.field {
 .role {
   --role: var(--outside);
   --role-ink: var(--ink-2);
+  --role-fill: var(--outside);
 }
 
 .role--home {
   --role: var(--home);
   --role-ink: var(--cobalt-ink);
+  --role-fill: var(--home-fill);
 }
 
 .role--away {
   --role: var(--away);
   --role-ink: var(--away-ink);
+  --role-fill: var(--away-fill);
 }
 
 .role--tension {
   --role: var(--tension);
   --role-ink: var(--tension-ink);
+  --role-fill: var(--tension-fill);
 }
 
 .role-label {

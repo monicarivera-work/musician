@@ -1,0 +1,1045 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-29T23:13:48Z",
+  "title": "Design System: Musician",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Chart White",
+        "canonical": "#f6f7f9",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#242526",
+          "#414243",
+          "#606163",
+          "#818284",
+          "#a4a5a7",
+          "#c8c9cb",
+          "#edeef0"
+        ]
+      },
+      "paper-sunk": {
+        "role": "neutral",
+        "displayName": "Chart Trough",
+        "canonical": "#eceef3",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#242529",
+          "#404246",
+          "#5f6165",
+          "#808287",
+          "#a3a5aa",
+          "#c7c9ce",
+          "#eceef3"
+        ]
+      },
+      "paper-raised": {
+        "role": "neutral",
+        "displayName": "Label White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Faint Rule",
+        "canonical": "#d3d8e3",
+        "tonalRamp": [
+          "#080b12",
+          "#21252d",
+          "#3e424b",
+          "#5d616b",
+          "#7e828c",
+          "#a0a5af",
+          "#c4c9d4",
+          "#e9eefa"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong Rule",
+        "canonical": "#aab1c3",
+        "tonalRamp": [
+          "#070a17",
+          "#202532",
+          "#3c4251",
+          "#5b6171",
+          "#7b8293",
+          "#9ea5b7",
+          "#c2c9db",
+          "#e8eeff"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Chart Ink",
+        "canonical": "#131a2e",
+        "tonalRamp": [
+          "#050a1c",
+          "#1d2439",
+          "#394158",
+          "#576179",
+          "#78829b",
+          "#9aa5bf",
+          "#bec9e5",
+          "#e8eeff"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Second Ink",
+        "canonical": "#454c63",
+        "tonalRamp": [
+          "#06091c",
+          "#1e2438",
+          "#3a4157",
+          "#596078",
+          "#7a819b",
+          "#9ca4bf",
+          "#c0c8e4",
+          "#e8eeff"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Third Ink",
+        "canonical": "#626982",
+        "tonalRamp": [
+          "#06091c",
+          "#1e2439",
+          "#3b4158",
+          "#596079",
+          "#7a819b",
+          "#9ca4bf",
+          "#c0c8e4",
+          "#e9eeff"
+        ]
+      },
+      "cobalt": {
+        "role": "primary",
+        "displayName": "Modulator Cobalt",
+        "canonical": "#2b4bd8",
+        "tonalRamp": [
+          "#020034",
+          "#090079",
+          "#1622b3",
+          "#2c4dda",
+          "#4a74ff",
+          "#7da0ff",
+          "#b2c8ff",
+          "#e7eeff"
+        ]
+      },
+      "cobalt-press": {
+        "role": "primary",
+        "displayName": "Pressed Cobalt",
+        "canonical": "#2140bf",
+        "tonalRamp": [
+          "#010035",
+          "#08007a",
+          "#142aaa",
+          "#2d51d1",
+          "#4b76f9",
+          "#7ca1ff",
+          "#b1c8ff",
+          "#e7efff"
+        ]
+      },
+      "cobalt-ink": {
+        "role": "primary",
+        "displayName": "Cobalt Ink",
+        "canonical": "#1f37a8",
+        "tonalRamp": [
+          "#020034",
+          "#0a0079",
+          "#1a2fa0",
+          "#3454c7",
+          "#5278ee",
+          "#7da0ff",
+          "#b2c8ff",
+          "#e7eeff"
+        ]
+      },
+      "cobalt-wash": {
+        "role": "primary",
+        "displayName": "Cobalt Wash",
+        "canonical": "#e4e9fc",
+        "tonalRamp": [
+          "#080a16",
+          "#212432",
+          "#3d4150",
+          "#5c6071",
+          "#7d8293",
+          "#a0a4b6",
+          "#c3c8db",
+          "#e9eeff"
+        ]
+      },
+      "on-cobalt": {
+        "role": "primary",
+        "displayName": "Rung White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "rung": {
+        "role": "primary",
+        "displayName": "Rung",
+        "canonical": "rgba(255, 255, 255, 0.92)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "rung-faint": {
+        "role": "primary",
+        "displayName": "Half-Step Tick",
+        "canonical": "rgba(255, 255, 255, 0.28)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "pointer": {
+        "role": "secondary",
+        "displayName": "Pointer Yellow",
+        "canonical": "#ffc53d",
+        "tonalRamp": [
+          "#110a00",
+          "#312200",
+          "#553e00",
+          "#7c5b00",
+          "#a57b00",
+          "#d09b00",
+          "#f9bf35",
+          "#ffecc8"
+        ]
+      },
+      "pointer-press": {
+        "role": "secondary",
+        "displayName": "Pressed Pointer",
+        "canonical": "#f2b21c",
+        "tonalRamp": [
+          "#120a00",
+          "#322200",
+          "#573d00",
+          "#7e5a00",
+          "#a87900",
+          "#d49a00",
+          "#fdbd30",
+          "#ffeccb"
+        ]
+      },
+      "pointer-wash": {
+        "role": "secondary",
+        "displayName": "Pointer Wash",
+        "canonical": "#fff3cf",
+        "tonalRamp": [
+          "#100a00",
+          "#2e2405",
+          "#4b4123",
+          "#6b6141",
+          "#8d8261",
+          "#b0a583",
+          "#d4c9a6",
+          "#faeeca"
+        ]
+      },
+      "on-pointer": {
+        "role": "secondary",
+        "displayName": "Fixed Ink",
+        "canonical": "#131a2e",
+        "tonalRamp": [
+          "#050a1c",
+          "#1d2439",
+          "#394158",
+          "#576179",
+          "#78829b",
+          "#9aa5bf",
+          "#bec9e5",
+          "#e8eeff"
+        ]
+      },
+      "home": {
+        "role": "tertiary",
+        "displayName": "Home Cobalt",
+        "canonical": "#2b4bd8",
+        "tonalRamp": [
+          "#020034",
+          "#090079",
+          "#1622b3",
+          "#2c4dda",
+          "#4a74ff",
+          "#7da0ff",
+          "#b2c8ff",
+          "#e7eeff"
+        ]
+      },
+      "away": {
+        "role": "tertiary",
+        "displayName": "Away Green",
+        "canonical": "#1f7a5c",
+        "tonalRamp": [
+          "#000f08",
+          "#002d1f",
+          "#004f38",
+          "#127255",
+          "#3f9575",
+          "#64b897",
+          "#89debb",
+          "#c0ffe3"
+        ]
+      },
+      "away-ink": {
+        "role": "tertiary",
+        "displayName": "Away Green Ink",
+        "canonical": "#1a6a50",
+        "tonalRamp": [
+          "#000f08",
+          "#002d1f",
+          "#004f39",
+          "#237156",
+          "#499377",
+          "#6db799",
+          "#91dcbd",
+          "#c0ffe4"
+        ]
+      },
+      "tension": {
+        "role": "tertiary",
+        "displayName": "Tension Vermilion",
+        "canonical": "#c63a22",
+        "tonalRamp": [
+          "#1d0100",
+          "#4a0700",
+          "#7c1200",
+          "#b12307",
+          "#d94c34",
+          "#ff745b",
+          "#ffb3a4",
+          "#ffe9e4"
+        ]
+      },
+      "tension-ink": {
+        "role": "tertiary",
+        "displayName": "Vermilion Ink",
+        "canonical": "#a93019",
+        "tonalRamp": [
+          "#1d0100",
+          "#4a0800",
+          "#7c1400",
+          "#a93019",
+          "#d1563e",
+          "#f97a60",
+          "#ffb4a3",
+          "#ffe9e4"
+        ]
+      },
+      "outside": {
+        "role": "tertiary",
+        "displayName": "Outside Gray",
+        "canonical": "#626982",
+        "tonalRamp": [
+          "#06091c",
+          "#1e2439",
+          "#3b4158",
+          "#596079",
+          "#7a819b",
+          "#9ca4bf",
+          "#c0c8e4",
+          "#e9eeff"
+        ]
+      },
+      "tape": {
+        "role": "neutral",
+        "displayName": "Binding Tape",
+        "canonical": "#131a2e",
+        "tonalRamp": [
+          "#050a1c",
+          "#1d2439",
+          "#394158",
+          "#576179",
+          "#78829b",
+          "#9aa5bf",
+          "#bec9e5",
+          "#e8eeff"
+        ]
+      },
+      "on-tape": {
+        "role": "neutral",
+        "displayName": "Tape Lettering",
+        "canonical": "#f6f7f9",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#242526",
+          "#414243",
+          "#606163",
+          "#818284",
+          "#a4a5a7",
+          "#c8c9cb",
+          "#edeef0"
+        ]
+      },
+      "on-tape-dim": {
+        "role": "neutral",
+        "displayName": "Dim Tape Lettering",
+        "canonical": "rgba(246, 247, 249, 0.72)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#242526",
+          "#414243",
+          "#606163",
+          "#818284",
+          "#a4a5a7",
+          "#c8c9cb",
+          "#edeef0"
+        ]
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "Night Chart",
+        "canonical": "#0e1322",
+        "tonalRamp": [
+          "#060a18",
+          "#1f2435",
+          "#3b4153",
+          "#5a6174",
+          "#7a8296",
+          "#9da5ba",
+          "#c1c9de",
+          "#e8eeff"
+        ]
+      },
+      "paper-sunk-dark": {
+        "role": "neutral",
+        "displayName": "Chart Trough (dark)",
+        "canonical": "#151b30",
+        "tonalRamp": [
+          "#06091d",
+          "#1d243a",
+          "#394159",
+          "#58607a",
+          "#79819c",
+          "#9ba4c0",
+          "#bfc8e5",
+          "#e8eeff"
+        ]
+      },
+      "paper-raised-dark": {
+        "role": "neutral",
+        "displayName": "Label White (dark)",
+        "canonical": "#1a2139",
+        "tonalRamp": [
+          "#05091e",
+          "#1c243c",
+          "#38415b",
+          "#57607c",
+          "#77819f",
+          "#9aa4c3",
+          "#bdc8e8",
+          "#e8eeff"
+        ]
+      },
+      "rule-dark": {
+        "role": "neutral",
+        "displayName": "Faint Rule (dark)",
+        "canonical": "#283050",
+        "tonalRamp": [
+          "#050723",
+          "#1b2241",
+          "#374061",
+          "#555f83",
+          "#7681a6",
+          "#98a3ca",
+          "#bcc8f0",
+          "#e9eeff"
+        ]
+      },
+      "rule-strong-dark": {
+        "role": "neutral",
+        "displayName": "Strong Rule (dark)",
+        "canonical": "#3c4670",
+        "tonalRamp": [
+          "#050529",
+          "#1a2147",
+          "#353f68",
+          "#535e8a",
+          "#7480ae",
+          "#95a3d3",
+          "#b9c7f9",
+          "#e9eeff"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Chart Ink (dark)",
+        "canonical": "#eceff7",
+        "tonalRamp": [
+          "#090b10",
+          "#23252b",
+          "#3f4248",
+          "#5f6168",
+          "#7f8289",
+          "#a2a5ac",
+          "#c6c9d1",
+          "#ebeef6"
+        ]
+      },
+      "ink-2-dark": {
+        "role": "neutral",
+        "displayName": "Second Ink (dark)",
+        "canonical": "#b6bcd0",
+        "tonalRamp": [
+          "#070a17",
+          "#202433",
+          "#3d4152",
+          "#5b6172",
+          "#7c8294",
+          "#9fa4b8",
+          "#c2c8dd",
+          "#e9eeff"
+        ]
+      },
+      "ink-3-dark": {
+        "role": "neutral",
+        "displayName": "Third Ink (dark)",
+        "canonical": "#8d94ab",
+        "tonalRamp": [
+          "#070a1a",
+          "#1f2436",
+          "#3b4155",
+          "#5a6076",
+          "#7b8198",
+          "#9da4bc",
+          "#c1c8e1",
+          "#e9eeff"
+        ]
+      },
+      "cobalt-dark": {
+        "role": "primary",
+        "displayName": "Modulator Cobalt (dark)",
+        "canonical": "#3355e8",
+        "tonalRamp": [
+          "#020034",
+          "#0a0079",
+          "#171eb6",
+          "#2c4bde",
+          "#4b74ff",
+          "#7da0ff",
+          "#b2c8ff",
+          "#e7eeff"
+        ]
+      },
+      "cobalt-press-dark": {
+        "role": "primary",
+        "displayName": "Pressed Cobalt (dark)",
+        "canonical": "#2a49d1",
+        "tonalRamp": [
+          "#020034",
+          "#0a0079",
+          "#1625af",
+          "#2e4ed7",
+          "#4b74ff",
+          "#7da0ff",
+          "#b2c8ff",
+          "#e7eeff"
+        ]
+      },
+      "cobalt-ink-dark": {
+        "role": "primary",
+        "displayName": "Cobalt Ink (dark)",
+        "canonical": "#a5b6ff",
+        "tonalRamp": [
+          "#050032",
+          "#171b57",
+          "#313b79",
+          "#4f5b9d",
+          "#6e7dc2",
+          "#90a0e8",
+          "#b8c6ff",
+          "#e9eeff"
+        ]
+      },
+      "cobalt-wash-dark": {
+        "role": "primary",
+        "displayName": "Cobalt Wash (dark)",
+        "canonical": "#1b2552",
+        "tonalRamp": [
+          "#04032d",
+          "#17204d",
+          "#323e6e",
+          "#505e90",
+          "#7080b4",
+          "#91a3da",
+          "#b5c7ff",
+          "#e8eeff"
+        ]
+      },
+      "pointer-wash-dark": {
+        "role": "secondary",
+        "displayName": "Pointer Wash (dark)",
+        "canonical": "#3a3218",
+        "tonalRamp": [
+          "#100b00",
+          "#2c240a",
+          "#4a4227",
+          "#696146",
+          "#8b8266",
+          "#aea587",
+          "#d3c9ab",
+          "#f8eecf"
+        ]
+      },
+      "home-dark": {
+        "role": "tertiary",
+        "displayName": "Home Cobalt (dark)",
+        "canonical": "#4d6cf0",
+        "tonalRamp": [
+          "#030034",
+          "#0f0077",
+          "#1f27aa",
+          "#374fd1",
+          "#5374f9",
+          "#819fff",
+          "#b4c8ff",
+          "#e8eeff"
+        ]
+      },
+      "away-dark": {
+        "role": "tertiary",
+        "displayName": "Away Green (dark)",
+        "canonical": "#2b9a74",
+        "tonalRamp": [
+          "#000f08",
+          "#002d1e",
+          "#004f38",
+          "#007353",
+          "#289872",
+          "#53bc94",
+          "#7ae1b7",
+          "#c0ffe3"
+        ]
+      },
+      "away-ink-dark": {
+        "role": "tertiary",
+        "displayName": "Away Green Ink (dark)",
+        "canonical": "#63d3a8",
+        "tonalRamp": [
+          "#000f08",
+          "#002d1f",
+          "#004f38",
+          "#007353",
+          "#189971",
+          "#4bbd93",
+          "#73e2b7",
+          "#c0ffe3"
+        ]
+      },
+      "tension-dark": {
+        "role": "tertiary",
+        "displayName": "Tension Vermilion (dark)",
+        "canonical": "#d9482e",
+        "tonalRamp": [
+          "#1d0100",
+          "#4a0700",
+          "#7c1300",
+          "#b22000",
+          "#db4a30",
+          "#ff745a",
+          "#ffb4a3",
+          "#ffe9e4"
+        ]
+      },
+      "tension-ink-dark": {
+        "role": "tertiary",
+        "displayName": "Vermilion Ink (dark)",
+        "canonical": "#ff8f74",
+        "tonalRamp": [
+          "#1d0200",
+          "#480b00",
+          "#791900",
+          "#a23b23",
+          "#c85e45",
+          "#f08167",
+          "#ffb4a1",
+          "#ffe9e3"
+        ]
+      },
+      "outside-dark": {
+        "role": "tertiary",
+        "displayName": "Outside Gray (dark)",
+        "canonical": "#8d94ab",
+        "tonalRamp": [
+          "#070a1a",
+          "#1f2436",
+          "#3b4155",
+          "#5a6076",
+          "#7b8198",
+          "#9da4bc",
+          "#c1c8e1",
+          "#e9eeff"
+        ]
+      },
+      "tape-dark": {
+        "role": "neutral",
+        "displayName": "Binding Tape (dark)",
+        "canonical": "#05080f",
+        "tonalRamp": [
+          "#070b13",
+          "#20252e",
+          "#3d424b",
+          "#5c616b",
+          "#7d838d",
+          "#9fa5b0",
+          "#c3c9d5",
+          "#e8effa"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The one big Besley line per screen: a song's key, a scale's name, the sing-setup title, a finished run's time."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Bottom-sheet titles and full-screen step titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section heads and the song title."
+      },
+      "subhead": {
+        "displayName": "Subhead",
+        "purpose": "Sans headings inside sheets and switch labels."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The plain-words line under a display line or section head, Second Ink, max 62ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default interface text."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Explanations and ladder captions, Second Ink."
+      },
+      "fine": {
+        "displayName": "Fine",
+        "purpose": "Fine print: source notes, privacy notes, secondary explanations, Third Ink."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Form labels and fact names."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Rung step words, nav labels (600), time tags (700)."
+      },
+      "note": {
+        "displayName": "Note",
+        "purpose": "Note names on the ladder; list notes and chords run 750 at 1.25-1.375rem."
+      },
+      "chord": {
+        "displayName": "Chord",
+        "purpose": "Chord names in the loop bars; songbook names at 1.5rem."
+      },
+      "fact": {
+        "displayName": "Fact",
+        "purpose": "Fact values in the margin and singing-ladder note labels."
+      },
+      "solfa": {
+        "displayName": "Solfa",
+        "purpose": "Syllables (do re mi) in Besley italic; upright white 650 inside the cobalt column, 850 at home."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Roman numerals under chords, Besley italic in Second Ink."
+      },
+      "timer": {
+        "displayName": "Timer",
+        "purpose": "The run clock (m:ss.s) and best times, tabular lining figures."
+      }
+    },
+    "shadows": [
+      {
+        "name": "ledge",
+        "value": "0 2px 0 var(--ink), 0 6px 14px -8px rgba(19, 26, 46, 0.45)",
+        "purpose": "Under the go button only: a hard 2px ink ledge with a short soft fall; collapses when pressed. The artwork thumbnail uses the same ledge at 1px."
+      },
+      {
+        "name": "ledge-dark",
+        "value": "0 2px 0 #05080f, 0 8px 18px -8px rgba(0, 0, 0, 0.7)",
+        "purpose": "The ledge in the dark scheme."
+      },
+      {
+        "name": "sheet",
+        "value": "0 -10px 30px -10px rgba(0, 0, 0, 0.35)",
+        "purpose": "The bottom sheet rising over the chart, above a rgba(8, 11, 20, 0.45) backdrop."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The system's one easing curve, for the unroll and every utility transition."
+      },
+      {
+        "name": "unroll",
+        "value": "720ms",
+        "purpose": "The one authored moment: the ladder unrolls downward (clip-path inset reveal) whenever its key or scale changes."
+      },
+      {
+        "name": "pointer-step",
+        "value": "420ms",
+        "purpose": "The pointer steps rung to rung in time with each played note."
+      },
+      {
+        "name": "pointer-flash",
+        "value": "700ms",
+        "purpose": "How long a tapped rung stays lit."
+      },
+      {
+        "name": "press",
+        "value": "120ms",
+        "purpose": "Buttons drop 1px on press (the go button 2px, onto its ledge)."
+      },
+      {
+        "name": "color",
+        "value": "160ms",
+        "purpose": "Background and shadow changes; the sheet backdrop fade."
+      },
+      {
+        "name": "sheet-rise",
+        "value": "260ms",
+        "purpose": "The bottom sheet rises 24px and fades in."
+      },
+      {
+        "name": "step-nudge",
+        "value": "900ms alternate infinite",
+        "purpose": "The yellow pointer on the analysis step in progress nudges 4px."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "1ms",
+        "purpose": "Under prefers-reduced-motion every animation and transition collapses to 1ms and one iteration."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "719px"
+      },
+      {
+        "name": "wrap",
+        "value": "720px"
+      },
+      {
+        "name": "sing-split",
+        "value": "900px"
+      },
+      {
+        "name": "wide",
+        "value": "960px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Go Button",
+      "kind": "button",
+      "refersTo": "button-go",
+      "description": "The one pointer-yellow action in view, always the step from reading to singing; stands on an ink ledge and drops onto it when pressed.",
+      "html": "<button type=\"button\" class=\"ds-btn-go\">Sing this scale</button>",
+      "css": ".ds-btn-go { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 18px; border: 1.5px solid var(--ink, #131a2e); border-radius: var(--radius, 4px); background: transparent; color: var(--ink, #131a2e); font-family: var(--font-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif); font-weight: 650; font-size: 1rem; line-height: 1.2; cursor: pointer; transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 160ms cubic-bezier(0.16, 1, 0.3, 1); min-height: 60px; font-size: 1.125rem; background: var(--pointer, #ffc53d); color: #131a2e; box-shadow: var(--shadow-lift, 0 2px 0 #131a2e, 0 6px 14px -8px rgba(19, 26, 46, 0.45)); } .ds-btn-go:hover { background: var(--pointer-press, #f2b21c); } .ds-btn-go:active { transform: translateY(2px); box-shadow: 0 0 0 var(--ink, #131a2e); } .ds-btn-go:focus-visible { outline: 3px solid var(--cobalt, #2b4bd8); outline-offset: 2px; }"
+    },
+    {
+      "name": "Cobalt Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Commits an input: start listening, upload a file, analyze typed chords, update the breakdown.",
+      "html": "<button type=\"button\" class=\"ds-btn-primary\">Update the breakdown</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 18px; border: 1.5px solid var(--ink, #131a2e); border-radius: var(--radius, 4px); background: transparent; color: var(--ink, #131a2e); font-family: var(--font-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif); font-weight: 650; font-size: 1rem; line-height: 1.2; cursor: pointer; transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 160ms cubic-bezier(0.16, 1, 0.3, 1); border-color: var(--cobalt, #2b4bd8); background: var(--cobalt, #2b4bd8); color: var(--on-cobalt, #ffffff); } .ds-btn-primary:hover { background: var(--cobalt-press, #2140bf); } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 3px solid var(--pointer, #ffc53d); outline-offset: 2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "The default printed tab: 1.5px ink outline, 4px corner, Chart Trough on hover, 1px press.",
+      "html": "<button type=\"button\" class=\"ds-btn\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M7 4.5v15L19 12z\" fill=\"currentColor\"/></svg>Play it</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 18px; border: 1.5px solid var(--ink, #131a2e); border-radius: var(--radius, 4px); background: transparent; color: var(--ink, #131a2e); font-family: var(--font-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif); font-weight: 650; font-size: 1rem; line-height: 1.2; cursor: pointer; transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 160ms cubic-bezier(0.16, 1, 0.3, 1);  } .ds-btn:hover { background: var(--paper-sunk, #eceef3); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 3px solid var(--pointer, #ffc53d); outline-offset: 2px; }"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Secondary actions in Cobalt Ink with no outline; Cobalt Wash on hover.",
+      "html": "<button type=\"button\" class=\"ds-btn-quiet\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M7 4.5v15L19 12z\" fill=\"currentColor\"/></svg>Play the scale</button>",
+      "css": ".ds-btn-quiet { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 18px; border: 1.5px solid var(--ink, #131a2e); border-radius: var(--radius, 4px); background: transparent; color: var(--ink, #131a2e); font-family: var(--font-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif); font-weight: 650; font-size: 1rem; line-height: 1.2; cursor: pointer; transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 160ms cubic-bezier(0.16, 1, 0.3, 1); border-color: transparent; padding: 0 10px; color: var(--cobalt-ink, #1f37a8); } .ds-btn-quiet:hover { background: var(--cobalt-wash, #e4e9fc); } .ds-btn-quiet:active { transform: translateY(1px); } .ds-btn-quiet:focus-visible { outline: 3px solid var(--pointer, #ffc53d); outline-offset: 2px; }"
+    },
+    {
+      "name": "Song Input Modes",
+      "kind": "custom",
+      "refersTo": "segmented",
+      "description": "Segmented control in one ink frame; the selected segment fills ink. Here, the four ways to put in a song.",
+      "html": "<div class=\"ds-seg\" role=\"tablist\" aria-label=\"How to put in a song\"><button type=\"button\" class=\"ds-seg__btn\" role=\"tab\" aria-selected=\"true\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m15.5 15.5 5.5 5.5\"/></svg>Search</button><button type=\"button\" class=\"ds-seg__btn\" role=\"tab\" aria-selected=\"false\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M4 3h16v18H4zM9 3v18M14 3v18M4 8h16M4 12.5h16\"/><circle cx=\"11.5\" cy=\"10.2\" r=\"1.3\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"16.5\" cy=\"14.8\" r=\"1.3\" fill=\"currentColor\" stroke=\"none\"/></svg>Chords</button><button type=\"button\" class=\"ds-seg__btn\" role=\"tab\" aria-selected=\"false\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M6.5 9a5.5 5.5 0 1 1 11 0c0 3-2.5 4-3.5 5.5S13 18 13 19a3 3 0 0 1-5.5 1.6\"/><path d=\"M10 9.2a2 2 0 1 1 4 0c0 1.2-1.2 1.6-1.6 2.4\"/></svg>Listen</button><button type=\"button\" class=\"ds-seg__btn\" role=\"tab\" aria-selected=\"false\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M6 2.5h8l4.5 4.5v14.5H6z\"/><path d=\"M14 2.5V7h4.5\"/><path d=\"M10.5 18.5v-6.5l4-.8v5.3\"/><circle cx=\"9.3\" cy=\"18.5\" r=\"1.3\"/><circle cx=\"13.3\" cy=\"16.5\" r=\"1.3\"/></svg>File</button></div>",
+      "css": ".ds-seg { display: flex; width: 100%; max-width: 420px; border: 1.5px solid var(--ink, #131a2e); border-radius: var(--radius, 4px); overflow: hidden; } .ds-seg__btn { flex: 1 1 auto; display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 48px; padding: 0 8px; border: 0; border-left: 1.5px solid var(--ink, #131a2e); background: transparent; color: var(--ink, #131a2e); font: 600 0.9375rem/1.2 var(--font-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif); white-space: nowrap; cursor: pointer; } .ds-seg__btn:first-child { border-left: 0; } .ds-seg__btn[aria-selected=\"true\"] { background: var(--ink, #131a2e); color: var(--paper, #f6f7f9); } .ds-seg__btn:focus-visible { outline: 3px solid var(--pointer, #ffc53d); outline-offset: 2px; }"
+    },
+    {
+      "name": "Note Chips",
+      "kind": "chip",
+      "refersTo": "chip-note",
+      "description": "Label White chips with a Strong Rule outline; pressed chips fill ink. Note chips letter the note in Besley.",
+      "html": "<div class=\"ds-chips\" role=\"group\" aria-label=\"Key\"><button type=\"button\" class=\"ds-chip ds-chip--note\" aria-pressed=\"false\">C</button><button type=\"button\" class=\"ds-chip ds-chip--note\" aria-pressed=\"false\">D</button><button type=\"button\" class=\"ds-chip ds-chip--note\" aria-pressed=\"false\">E</button><button type=\"button\" class=\"ds-chip ds-chip--note\" aria-pressed=\"false\">F</button><button type=\"button\" class=\"ds-chip ds-chip--note\" aria-pressed=\"true\">G</button><button type=\"button\" class=\"ds-chip ds-chip--note\" aria-pressed=\"false\">A</button><button type=\"button\" class=\"ds-chip ds-chip--note\" aria-pressed=\"false\">B</button></div>",
+      "css": ".ds-chips { display: flex; flex-wrap: wrap; gap: 8px; } .ds-chip { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border: 1.5px solid var(--rule-strong, #aab1c3); border-radius: var(--radius, 4px); background: var(--paper-raised, #ffffff); color: var(--ink, #131a2e); font: 600 0.9375rem/1.2 var(--font-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif); white-space: nowrap; cursor: pointer; } .ds-chip[aria-pressed=\"true\"] { background: var(--ink, #131a2e); border-color: var(--ink, #131a2e); color: var(--paper, #f6f7f9); } .ds-chip--note { min-width: 48px; justify-content: center; font-family: var(--font-display, 'Besley Variable', Georgia, 'Times New Roman', serif); font-weight: 700; font-size: 1.0625rem; } .ds-chip:focus-visible { outline: 3px solid var(--pointer, #ffc53d); outline-offset: 2px; }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Label White field with a Third Ink outline; on focus the outline turns cobalt inside a 3px pointer-yellow halo.",
+      "html": "<div class=\"ds-searchfield\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m15.5 15.5 5.5 5.5\"/></svg><input class=\"ds-field\" type=\"search\" placeholder=\"Song title or artist\" aria-label=\"Song title or artist\"></div>",
+      "css": ".ds-searchfield { position: relative; max-width: 420px; } .ds-searchfield svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--ink-3, #626982); pointer-events: none; } .ds-field { display: block; width: 100%; box-sizing: border-box; min-height: 52px; padding: 12px 14px 12px 44px; border: 1.5px solid var(--ink-3, #626982); border-radius: var(--radius, 4px); background: var(--paper-raised, #ffffff); color: var(--ink, #131a2e); font: 400 1.0625rem/1.4 var(--font-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif); } .ds-field::placeholder { color: var(--ink-3, #626982); } .ds-field:focus { outline: none; border-color: var(--cobalt, #2b4bd8); box-shadow: 0 0 0 3px var(--pointer, #ffc53d); }"
+    },
+    {
+      "name": "Tape Navigation",
+      "kind": "nav",
+      "refersTo": "nav-tab",
+      "description": "The bottom binding-tape nav: four equal tabs in dim lettering; the current tab lights up under a 4px pointer-yellow bar.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Sections\"><a class=\"ds-nav__link\" href=\"#\" aria-current=\"page\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M9 18V5l11-2v13\"/><circle cx=\"6.5\" cy=\"18\" r=\"2.5\"/><circle cx=\"17.5\" cy=\"16\" r=\"2.5\"/></svg>Song</a><a class=\"ds-nav__link\" href=\"#\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M7 2v20M17 2v20M7 6h10M7 11h10M7 15h10M7 19h10\"/></svg>Scales</a><a class=\"ds-nav__link\" href=\"#\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><rect x=\"9\" y=\"2.5\" width=\"6\" height=\"11\" rx=\"3\"/><path d=\"M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21.5M8.5 21.5h7\"/></svg>Sing</a><a class=\"ds-nav__link\" href=\"#\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"13.5\" r=\"7.5\"/><path d=\"M12 9.5v4.5l2.5 2M10 2.5h4M12 2.5v3.5M18.5 6.5l1.5-1.5\"/></svg>Progress</a></nav>",
+      "css": ".ds-nav { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 560px; height: 64px; background: var(--tape, #131a2e); } .ds-nav__link { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; color: var(--on-tape-dim, rgba(246, 247, 249, 0.72)); text-decoration: none; font: 600 0.75rem/1.2 var(--font-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif); letter-spacing: 0.01em; } .ds-nav__link[aria-current=\"page\"] { color: var(--on-tape, #f6f7f9); } .ds-nav__link[aria-current=\"page\"]::before { content: ''; position: absolute; top: 0; left: 28%; right: 28%; height: 4px; background: var(--pointer, #ffc53d); } .ds-nav__link:focus-visible { outline: 3px solid var(--pointer, #ffc53d); outline-offset: -4px; }"
+    },
+    {
+      "name": "The Modulator",
+      "kind": "custom",
+      "refersTo": "ladder-column",
+      "description": "Signature: the scale as a cobalt ladder with rungs spaced by real half steps, solfa on the rungs, note names in the margin, the pointer on the active rung, and the unroll. Composite view: the song view adds chord-job tags; the scale view adds neighbor-key columns with the changed note in yellow.",
+      "html": "<figure class=\"ds-ladder\" aria-label=\"C major: C, D, E, F, G, A, B, C\"><div class=\"ds-ladder__chart\" style=\"height:284px\"><div class=\"ds-ladder__col\"></div><div class=\"ds-ladder__side\"></div><i class=\"ds-ladder__tick\" style=\"top:242px\"></i><i class=\"ds-ladder__tick\" style=\"top:202px\"></i><i class=\"ds-ladder__tick\" style=\"top:142px\"></i><i class=\"ds-ladder__tick\" style=\"top:102px\"></i><i class=\"ds-ladder__tick\" style=\"top:62px\"></i><i class=\"ds-ladder__rung ds-ladder__rung--home\" style=\"top:262px\"></i><i class=\"ds-ladder__lead\" style=\"top:262px\"></i><i class=\"ds-ladder__rung\" style=\"top:222px\"></i><i class=\"ds-ladder__lead\" style=\"top:222px\"></i><i class=\"ds-ladder__rung\" style=\"top:182px\"></i><i class=\"ds-ladder__lead\" style=\"top:182px\"></i><i class=\"ds-ladder__rung\" style=\"top:162px\"></i><i class=\"ds-ladder__lead\" style=\"top:162px\"></i><i class=\"ds-ladder__rung\" style=\"top:122px\"></i><i class=\"ds-ladder__lead\" style=\"top:122px\"></i><i class=\"ds-ladder__rung\" style=\"top:82px\"></i><i class=\"ds-ladder__lead\" style=\"top:82px\"></i><i class=\"ds-ladder__rung\" style=\"top:42px\"></i><i class=\"ds-ladder__lead\" style=\"top:42px\"></i><i class=\"ds-ladder__rung ds-ladder__rung--home\" style=\"top:22px\"></i><i class=\"ds-ladder__lead\" style=\"top:22px\"></i><i class=\"ds-ladder__side-rung\" style=\"top:262px\"></i><i class=\"ds-ladder__side-rung\" style=\"top:222px\"></i><i class=\"ds-ladder__side-rung\" style=\"top:182px\"></i><i class=\"ds-ladder__side-rung\" style=\"top:142px\"></i><span class=\"ds-ladder__changed\" style=\"top:142px\">F♯</span><i class=\"ds-ladder__side-rung ds-ladder__side-rung--home\" style=\"top:122px\"></i><span class=\"ds-ladder__side-solfa\" style=\"top:122px\">do</span><i class=\"ds-ladder__side-rung\" style=\"top:82px\"></i><i class=\"ds-ladder__side-rung\" style=\"top:42px\"></i><i class=\"ds-ladder__side-rung\" style=\"top:22px\"></i><i class=\"ds-ladder__pointer-bar\" style=\"top:182px\"></i><svg class=\"ds-ladder__pointer\" style=\"top:182px\" width=\"19\" height=\"16\" viewBox=\"0 0 19 16\" aria-hidden=\"true\"><path d=\"M0 0 19 8 0 16z\"/></svg><div class=\"ds-ladder__row is-home\" style=\"top:262px\"><span class=\"ds-ladder__solfa\">do</span><span class=\"ds-ladder__label\"><span class=\"ds-ladder__note\">C</span><span class=\"ds-ladder__step\">home</span></span><span class=\"ds-ladder__mark\"><span class=\"ds-mark ds-mark--home\">C</span></span><button type=\"button\" class=\"ds-ladder__hit\" aria-label=\"Play C, do\"></button></div><div class=\"ds-ladder__row\" style=\"top:222px\"><span class=\"ds-ladder__solfa\">re</span><span class=\"ds-ladder__label\"><span class=\"ds-ladder__note\">D</span><span class=\"ds-ladder__step\">note 2</span></span><span class=\"ds-ladder__mark\"><span class=\"ds-mark ds-mark--outside\">D7</span></span><button type=\"button\" class=\"ds-ladder__hit\" aria-label=\"Play D, re\"></button></div><div class=\"ds-ladder__row\" style=\"top:182px\"><span class=\"ds-ladder__solfa\">mi</span><span class=\"ds-ladder__label\"><span class=\"ds-ladder__note\">E</span><span class=\"ds-ladder__step\">note 3</span></span><button type=\"button\" class=\"ds-ladder__hit\" aria-label=\"Play E, mi\"></button></div><div class=\"ds-ladder__row\" style=\"top:162px\"><span class=\"ds-ladder__solfa\">fa</span><span class=\"ds-ladder__label\"><span class=\"ds-ladder__note\">F</span><span class=\"ds-ladder__step\">note 4</span></span><span class=\"ds-ladder__mark\"><span class=\"ds-mark ds-mark--away\">F</span></span><button type=\"button\" class=\"ds-ladder__hit\" aria-label=\"Play F, fa\"></button></div><div class=\"ds-ladder__row\" style=\"top:122px\"><span class=\"ds-ladder__solfa\">sol</span><span class=\"ds-ladder__label\"><span class=\"ds-ladder__note\">G</span><span class=\"ds-ladder__step\">note 5</span></span><span class=\"ds-ladder__mark\"><span class=\"ds-mark ds-mark--tension\">G</span></span><button type=\"button\" class=\"ds-ladder__hit\" aria-label=\"Play G, sol\"></button></div><div class=\"ds-ladder__row\" style=\"top:82px\"><span class=\"ds-ladder__solfa\">la</span><span class=\"ds-ladder__label\"><span class=\"ds-ladder__note\">A</span><span class=\"ds-ladder__step\">note 6</span></span><span class=\"ds-ladder__mark\"><span class=\"ds-mark ds-mark--home\">Am</span></span><button type=\"button\" class=\"ds-ladder__hit\" aria-label=\"Play A, la\"></button></div><div class=\"ds-ladder__row\" style=\"top:42px\"><span class=\"ds-ladder__solfa\">ti</span><span class=\"ds-ladder__label\"><span class=\"ds-ladder__note\">B</span><span class=\"ds-ladder__step\">note 7</span></span><button type=\"button\" class=\"ds-ladder__hit\" aria-label=\"Play B, ti\"></button></div><div class=\"ds-ladder__row is-home\" style=\"top:22px\"><span class=\"ds-ladder__solfa\">do</span><span class=\"ds-ladder__label\"><span class=\"ds-ladder__note\">C</span><span class=\"ds-ladder__step\">home</span></span><span class=\"ds-ladder__mark\"><span class=\"ds-mark ds-mark--home\">C</span></span><button type=\"button\" class=\"ds-ladder__hit\" aria-label=\"Play C, do\"></button></div><span class=\"ds-ladder__gap\" style=\"top:242px\">2 frets</span><span class=\"ds-ladder__gap\" style=\"top:202px\">2 frets</span><span class=\"ds-ladder__gap is-half\" style=\"top:172px\">1 fret</span><span class=\"ds-ladder__gap\" style=\"top:142px\">2 frets</span><span class=\"ds-ladder__gap\" style=\"top:102px\">2 frets</span><span class=\"ds-ladder__gap\" style=\"top:62px\">2 frets</span><span class=\"ds-ladder__gap is-half\" style=\"top:32px\">1 fret</span><button type=\"button\" class=\"ds-ladder__side-label\" aria-label=\"Switch to G major\">G</button></div><figcaption class=\"ds-ladder__caption\">Gaps show whole and half steps. Colored tags mark the chords a song uses. The pale column is the next key up; its one changed note is marked in yellow.</figcaption><div class=\"ds-roles\"><span class=\"ds-role ds-role--home\">Home</span><span class=\"ds-role ds-role--away\">Away</span><span class=\"ds-role ds-role--tension\">Tension</span><span class=\"ds-role ds-role--outside\">Leading</span></div></figure>",
+      "css": ".ds-ladder { width: 360px; margin: 0; padding: 36px 8px 8px; background: var(--paper, #f6f7f9); color: var(--ink, #131a2e); font-family: var(--font-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif); } .ds-ladder__chart { position: relative; animation: ds-unroll 720ms cubic-bezier(0.16, 1, 0.3, 1) both; } @keyframes ds-unroll { from { clip-path: inset(-48px -64px 100% -64px); } to { clip-path: inset(-48px -64px -48px -64px); } } @media (prefers-reduced-motion: reduce) { .ds-ladder__chart { animation-duration: 1ms; } } .ds-ladder__col { position: absolute; top: 0; bottom: 0; left: 50px; width: 74px; background: var(--cobalt, #2b4bd8); } .ds-ladder__side { position: absolute; top: 0; bottom: 0; left: 128px; width: 34px; background: var(--cobalt-wash, #e4e9fc); } .ds-ladder__rung { position: absolute; left: 50px; width: 74px; height: 0; border-top: 2px solid var(--rung, rgba(255, 255, 255, 0.92)); transform: translateY(-1px); } .ds-ladder__rung--home { border-top: 5px solid #fff; transform: translateY(-2.5px); } .ds-ladder__tick { position: absolute; left: 115px; width: 9px; height: 0; border-top: 2px solid var(--rung-faint, rgba(255, 255, 255, 0.28)); transform: translateY(-1px); } .ds-ladder__lead { position: absolute; left: 168px; right: 0; height: 0; border-top: 1px solid var(--rule, #d3d8e3); } .ds-ladder__side-rung { position: absolute; left: 128px; width: 34px; height: 0; border-top: 1.5px solid color-mix(in srgb, var(--cobalt, #2b4bd8) 55%, transparent); transform: translateY(-0.75px); } .ds-ladder__side-rung--home { border-top: 3.5px solid color-mix(in srgb, var(--cobalt, #2b4bd8) 90%, transparent); transform: translateY(-1.75px); } .ds-ladder__side-solfa { position: absolute; left: 128px; width: 34px; text-align: center; font: 750 11px/1 var(--font-display, 'Besley Variable', Georgia, 'Times New Roman', serif); color: var(--cobalt-ink, #1f37a8); transform: translateY(calc(-100% - 4px)); } .ds-ladder__changed { position: absolute; left: 130px; width: 30px; height: 18px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; background: var(--pointer, #ffc53d); border: 1.2px solid #131a2e; border-radius: 2px; font: 800 12px/1 var(--font-display, 'Besley Variable', Georgia, 'Times New Roman', serif); color: #131a2e; transform: translateY(-9px); } .ds-ladder__side-label { position: absolute; top: -30px; left: 128px; width: 34px; height: 26px; padding: 0; border: 0; background: none; font: 700 0.8125rem/26px var(--font-display, 'Besley Variable', Georgia, 'Times New Roman', serif); color: var(--cobalt-ink, #1f37a8); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; } .ds-ladder__pointer-bar { position: absolute; left: 50px; width: 74px; height: 6px; background: var(--pointer, #ffc53d); transform: translateY(-3px); } .ds-ladder__pointer { position: absolute; left: 34px; transform: translateY(-8px); overflow: visible; } .ds-ladder__pointer path { fill: var(--pointer, #ffc53d); stroke: #131a2e; stroke-width: 1.5; stroke-linejoin: round; } .ds-ladder__row { position: absolute; left: 0; right: 0; height: 0; } .ds-ladder__solfa { position: absolute; left: 59px; top: -1.3em; color: var(--on-cobalt, #ffffff); font: 650 1.0625rem/1 var(--font-display, 'Besley Variable', Georgia, 'Times New Roman', serif); letter-spacing: 0.01em; } .ds-ladder__row.is-home .ds-ladder__solfa { font-weight: 850; } .ds-ladder__label { position: absolute; left: 174px; bottom: 3px; display: flex; align-items: baseline; gap: 8px; padding-right: 6px; background: var(--paper, #f6f7f9); line-height: 1; } .ds-ladder__note { font: 700 1.375rem/1 var(--font-display, 'Besley Variable', Georgia, 'Times New Roman', serif); } .ds-ladder__row.is-home .ds-ladder__note { font-weight: 850; color: var(--cobalt-ink, #1f37a8); } .ds-ladder__step { font-size: 0.75rem; font-weight: 650; color: var(--ink-3, #626982); } .ds-ladder__row.is-home .ds-ladder__step { color: var(--cobalt-ink, #1f37a8); } .ds-ladder__mark { position: absolute; right: 0; bottom: 3px; display: flex; gap: 4px; padding-left: 6px; background: var(--paper, #f6f7f9); } .ds-mark { display: inline-flex; align-items: center; min-height: 22px; padding: 0 6px; border-radius: 3px; color: #fff; font: 700 0.8125rem/1 var(--font-display, 'Besley Variable', Georgia, 'Times New Roman', serif); box-sizing: border-box; } .ds-mark--home { background: var(--home, #2b4bd8); } .ds-mark--away { background: var(--away, #1f7a5c); } .ds-mark--tension { background: var(--tension, #c63a22); } .ds-mark--outside { background: var(--paper-raised, #ffffff); color: var(--ink, #131a2e); border: 1.5px dashed var(--outside, #626982); } .ds-ladder__hit { position: absolute; left: 50px; width: 74px; top: -15px; height: 30px; padding: 0; border: 0; border-radius: 2px; background: transparent; cursor: pointer; } .ds-ladder__hit:hover { background: rgba(255, 255, 255, 0.12); } .ds-ladder__hit:active { background: rgba(255, 197, 61, 0.45); } .ds-ladder__hit:focus-visible { outline: 3px solid var(--pointer, #ffc53d); outline-offset: 2px; } .ds-ladder__gap { position: absolute; left: 0; width: 44px; transform: translateY(-50%); text-align: right; font-size: 0.6875rem; font-weight: 600; line-height: 1; color: var(--ink-3, #626982); white-space: nowrap; } .ds-ladder__gap.is-half { color: var(--cobalt-ink, #1f37a8); font-weight: 750; } .ds-ladder__caption { margin-top: 12px; max-width: 46ch; font-size: 0.875rem; line-height: 1.45; color: var(--ink-2, #454c63); } .ds-roles { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; } .ds-role { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8125rem; font-weight: 650; } .ds-role::before { content: ''; width: 10px; height: 10px; box-sizing: border-box; background: var(--role); } .ds-role--home { --role: var(--home, #2b4bd8); color: var(--cobalt-ink, #1f37a8); } .ds-role--away { --role: var(--away, #1f7a5c); color: var(--away-ink, #1a6a50); } .ds-role--tension { --role: var(--tension, #c63a22); color: var(--tension-ink, #a93019); } .ds-role--outside { color: var(--ink-2, #454c63); } .ds-role--outside::before { background: transparent; border: 2px dashed var(--outside, #626982); }"
+    },
+    {
+      "name": "The Singing Ladder",
+      "kind": "custom",
+      "refersTo": "landed-time-tag",
+      "description": "Signature: the ladder during a timed run (one static frame). The target rung is dashed yellow under the pointer, the hold bar fills as she holds it, her voice traces white while off and yellow in tune, and landed rungs carry their times.",
+      "html": "<div class=\"ds-sing\" role=\"img\" aria-label=\"Singing ladder: sing E, mi. C and D landed.\"><div class=\"ds-sing__field\"><i class=\"ds-sing__tick\" style=\"top:166px\"></i><i class=\"ds-sing__tick\" style=\"top:126px\"></i><i class=\"ds-sing__tick\" style=\"top:66px\"></i><i class=\"ds-sing__tick\" style=\"top:26px\"></i><span class=\"ds-sing__rung\" style=\"top:206px\"></span><span class=\"ds-sing__rung is-home is-landed\" style=\"top:186px\"><span class=\"ds-sing__time\">0:01.8</span></span><span class=\"ds-sing__rung is-landed\" style=\"top:146px\"><span class=\"ds-sing__time\">0:03.1</span></span><span class=\"ds-sing__rung is-target\" style=\"top:106px\"></span><span class=\"ds-sing__rung\" style=\"top:86px\"></span><span class=\"ds-sing__rung\" style=\"top:46px\"></span><i class=\"ds-sing__hold\" style=\"top:106px;width:45%\"></i><svg class=\"ds-sing__trace\" width=\"290\" height=\"232\" viewBox=\"0 0 290 232\" aria-hidden=\"true\"><path class=\"ds-sing__off\" d=\"M96 132 L132 124 L160 115 L186 110\"/><path class=\"ds-sing__on\" d=\"M186 110 L214 106.5 L260 106\"/><circle class=\"ds-sing__voice\" cx=\"260\" cy=\"106\" r=\"10\"/></svg></div><span class=\"ds-sing__label\" style=\"top:206px\"><span class=\"ds-sing__note\">B</span><span class=\"ds-sing__solfa\">ti</span></span><span class=\"ds-sing__label\" style=\"top:186px\"><span class=\"ds-sing__note\">C</span><span class=\"ds-sing__solfa\">do</span></span><span class=\"ds-sing__label\" style=\"top:146px\"><span class=\"ds-sing__note\">D</span><span class=\"ds-sing__solfa\">re</span></span><span class=\"ds-sing__label is-target\" style=\"top:106px\"><span class=\"ds-sing__note\">E</span><span class=\"ds-sing__solfa\">mi</span></span><span class=\"ds-sing__label\" style=\"top:86px\"><span class=\"ds-sing__note\">F</span><span class=\"ds-sing__solfa\">fa</span></span><span class=\"ds-sing__label\" style=\"top:46px\"><span class=\"ds-sing__note\">G</span><span class=\"ds-sing__solfa\">sol</span></span><svg class=\"ds-sing__pointer\" style=\"top:106px\" width=\"20\" height=\"22\" viewBox=\"0 0 20 22\" aria-hidden=\"true\"><path d=\"M1.5 1.5 18.5 11 1.5 20.5z\"/></svg></div>",
+      "css": ".ds-sing { position: relative; width: 360px; height: 232px; background: var(--paper, #f6f7f9); color: var(--ink, #131a2e); font-family: var(--font-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif); } .ds-sing__field { position: absolute; top: 0; bottom: 0; left: 70px; right: 0; background: var(--cobalt, #2b4bd8); overflow: hidden; } .ds-sing__tick { position: absolute; left: 0; width: 10px; height: 0; border-top: 2px solid var(--rung-faint, rgba(255, 255, 255, 0.28)); } .ds-sing__rung { position: absolute; left: 0; right: 0; height: 0; border-top: 2px solid var(--rung, rgba(255, 255, 255, 0.92)); transform: translateY(-1px); } .ds-sing__rung.is-home { border-top-width: 4px; transform: translateY(-2px); } .ds-sing__rung.is-target { border-top: 2px dashed var(--pointer, #ffc53d); } .ds-sing__rung.is-landed { border-top-color: #fff; } .ds-sing__time { position: absolute; right: 44px; top: -22px; padding: 1px 6px; border-radius: 2px; background: #fff; color: #131a2e; font-size: 0.75rem; font-weight: 700; font-variant-numeric: tabular-nums lining-nums; } .ds-sing__hold { position: absolute; left: 0; height: 10px; background: var(--pointer, #ffc53d); transform: translateY(-5px); } .ds-sing__trace { position: absolute; top: 0; left: 0; overflow: visible; } .ds-sing__off, .ds-sing__on { fill: none; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; } .ds-sing__off { stroke: rgba(255, 255, 255, 0.9); } .ds-sing__on { stroke: var(--pointer, #ffc53d); } .ds-sing__voice { fill: var(--pointer, #ffc53d); stroke: #131a2e; stroke-width: 2.5; } .ds-sing__label { position: absolute; left: 0; width: 60px; transform: translateY(-50%); display: flex; align-items: baseline; justify-content: flex-end; gap: 5px; line-height: 1; } .ds-sing__note { font: 700 1.125rem/1 var(--font-display, 'Besley Variable', Georgia, 'Times New Roman', serif); } .ds-sing__solfa { font: italic 500 0.8125rem/1 var(--font-display, 'Besley Variable', Georgia, 'Times New Roman', serif); color: var(--ink-3, #626982); } .ds-sing__label.is-target .ds-sing__note { font-weight: 850; font-size: 1.3125rem; } .ds-sing__pointer { position: absolute; left: 67px; transform: translateY(-50%); overflow: visible; } .ds-sing__pointer path { fill: var(--pointer, #ffc53d); stroke: #131a2e; stroke-width: 1.5; stroke-linejoin: round; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Modulator",
+    "overview": "The Modulator was the Tonic Sol-fa classroom wall chart: a tall column of syllables, with the neighboring keys in columns beside it, that a teacher pointed at while the class sang. Musician rebuilds it as a phone instrument. Song analysis, scale study, and singing all hang from the same vertical pitch ladder, a cobalt column whose white rungs are spaced by real half steps, so the distance between two notes is visible before it is sung. Pitch is always height. The system refuses the category's grid of cards and its round tuner dial.\n\nThe surface is a printed chart, not an app skin. A cool chart-white sheet carries navy-black ink; ink binding-tape bands close the top and bottom of the screen; sections open with ruled ink lines instead of boxes. Besley, a Clarendon slab, letters everything musical at poster weight (keys, notes, chords, numerals, syllables, times) while the phone's own sans runs the controls. Color is spent only as meaning: cobalt is the ladder and home, pointer yellow is \"here, now, you\", and green and vermilion are the away and tension jobs of chords. Density is calm and one-handed: one column on the phone, 48px targets, the go button within reach of the thumb.\n\nLight and dark both ship, following the system color scheme. The light chart is the native printed object; the dark chart deepens the sheet to night navy and keeps every ink's role. Motion is one authored moment, the ladder unrolling downward like a pull-down chart, plus the pointer stepping from rung to rung with the sound; reduced motion collapses all of it.",
+    "keyCharacteristics": [
+      "One vertical pitch ladder anchors every musical screen; rung spacing is the real interval.",
+      "Flat chart-white sheet, navy ink, ink binding-tape bands top and bottom, ruled sections instead of boxes.",
+      "Besley (Clarendon slab) letters the music and the headings; the system sans runs the interface.",
+      "Color is meaning: cobalt is the ladder and home, pointer yellow is here/now/you, green is away, vermilion is tension.",
+      "Square chart edges: 4px on controls and inline panels; bands, ladders, bars, and sheets stay square.",
+      "Light and dark both ship; the light chart is the native object."
+    ],
+    "rules": [
+      {
+        "name": "The Pointer Rule",
+        "body": "Pointer yellow means \"here, now, you\": the note to sing, her voice while it is in tune, the rung the pointer is on, the hold bar filling as she lands a note, and her best time. It is lent only to the one go button in view, focus rings, the active-nav bar, and pointer-shaped marks (the brand mark, the analysis step in progress, the changed note on a neighbor-key column). It never fills headings or panels, never marks a chord job, and never marks home.",
+        "section": "colors"
+      },
+      {
+        "name": "The Home Is Cobalt Rule",
+        "body": "Home is always cobalt: the heaviest rung on the cobalt column with its label in Cobalt Ink at weight 850, the home dots on the fretboard, the home chord job. Yellow is where she is; cobalt is where the scale rests.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Jobs Rule",
+        "body": "Chords have exactly three colored jobs (home cobalt, away green, tension vermilion), and a job color never speaks alone: every colored tag is lettered with its chord name, and every list that explains jobs prints the job word (Home, Away, Tension, Borrowed, Leading, Outside) beside a 10px square swatch. Borrowed, leading, and outside chords take a dashed gray outline, never a fill. Lettering on a job fill must reach 4.5:1: the light chart's white lettering does (5.2:1 to 6.8:1); the dark chart's white-on-fill tags currently measure 3.5:1 (away), 4.3:1 (tension), and 4.45:1 (home) and are not yet part of the system.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Besley letters the music and the chart's headings: every note, key, chord, numeral, syllable, and time, and every display, headline, and title line. The system sans runs everything that operates the app: button labels, tabs, form labels, explanations, step words. A note name never appears in the sans; when a button's label is a note, key, or chord, that label is Besley.",
+        "section": "typography"
+      },
+      {
+        "name": "The Engraved Accidental Rule",
+        "body": "Sharps and flats beside a note or chord name in type are engraved Bravura glyphs at 0.82em, and screen readers hear \"F sharp\". Tiny SVG labels and plain-words sentences use the ♯ and ♭ characters. Never a typed \"#\" or \"b\". Octave numbers drop to 0.55em sans in Third Ink.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ladder-Left Rule",
+        "body": "When a screen shows a scale, its ladder is the leftmost column and everything else is margin notes beside or below it. The ladder never sits in a card, a carousel, or a right-hand column.",
+        "section": "layout"
+      },
+      {
+        "name": "The Printed Plane Rule",
+        "body": "Panels, lists, notices, and ladders never float: no drop shadows, blur, or glass on them. Depth is tone and ink; the ledge and the sheet are the whole shadow vocabulary.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Chart Rule",
+        "body": "Never round a button, chip, field, tag, panel, or sheet past 4px; sheets that slide over the chart stay square. Notation's own circles and capsules are exempt.",
+        "section": "shapes"
+      },
+      {
+        "name": "The One Go Rule",
+        "body": "At most one go button is visible at a time, and it always carries the step from reading to singing: \"Sing this scale\", \"Start timed run\".",
+        "section": "components"
+      },
+      {
+        "name": "The One Moment Rule",
+        "body": "The unroll is the system's only authored animation, and the pointer stepping with the sound is its only traveling mark. Utility motion stays short on the same ease-out (presses 120ms, color 160ms, sheets 260ms), and reduced motion collapses every animation and transition to 1ms: the chart arrives unrolled, sheets appear in place, and the pointer simply marks each sounding rung.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do hang every scale on the Modulator: a cobalt column, white rungs spaced by real half steps (30px per half step; 20px in the song view on phones), syllables on the rungs, note names in the margin.",
+      "Do keep pointer yellow for here, now, and you (the note to sing, the in-tune voice, the active rung, the best time) plus the one go button, focus rings, and the active-nav bar.",
+      "Do make home cobalt wherever it appears: the heavy home rung, Cobalt Ink home labels, cobalt fretboard dots, the home chord job.",
+      "Do pair every job color with a chord name or a job word, and give borrowed, leading, and outside chords a dashed gray outline.",
+      "Do letter notes, keys, chords, numerals, syllables, times, and headings in Besley with engraved accidentals; run controls and explanations in the system sans.",
+      "Do divide the sheet with ink: 1.5px rules to open sections, 1px faint rules between rows, tape bands at the top and bottom.",
+      "Do put Fixed Ink (#131a2e) on yellow and on white tags in both schemes.",
+      "Do ship light and dark together, keep every role in both, and hold lettering on job fills to 4.5:1 in both.",
+      "Do collapse every animation and transition under reduced motion."
+    ],
+    "donts": [
+      "Don't show pitch as a round tuner dial, needle, or gauge; pitch is height on the ladder.",
+      "Don't box sections or list items as cards (raised, shadowed, or tiled); the only outlined panels are notices and the analysis panel.",
+      "Don't use pointer yellow for headings, panel fills, or decoration, for any chord job, or for home; the pale Pointer Wash behind coaching notices is its only tint.",
+      "Don't let a job color carry meaning alone, or fill a borrowed, leading, or outside chord.",
+      "Don't round a button, chip, field, tag, panel, or sheet past 4px; notation's circles and capsules are exempt.",
+      "Don't draw the fretboard as wood or texture; it is ink frets and strings on Label White.",
+      "Don't add drop shadows, blur, or glass to panels, lists, notices, or ladders.",
+      "Don't add a second authored animation; the unroll and the pointer are the motion.",
+      "Don't type \"#\" or \"b\" for an accidental."
+    ]
+  }
+}

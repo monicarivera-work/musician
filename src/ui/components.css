@@ -273,7 +273,7 @@
   min-height: 22px;
   padding: 0 6px;
   border-radius: 3px;
-  background: var(--role);
+  background: var(--role-fill);
   color: #fff;
   font-family: var(--font-display);
   font-weight: 700;
