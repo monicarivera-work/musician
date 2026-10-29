@@ -26,7 +26,7 @@ Everything runs on the phone; nothing is uploaded.
 - **Chords:** beat-by-beat pitch profiles matched against major and minor triads, smoothed with a Viterbi (HMM) pass that prefers chords from the detected key.
 - **Tempo:** onset-strength autocorrelation plus a dynamic-programming beat tracker.
 
-On 24 well-known songs, the detected key matched the published key exactly for 20 and was the first alternative for 2 more. Audio results are estimates: the app always shows how sure it is, offers alternatives, and lets you correct the key or type the real chords. Typed chords give an exact analysis. A 30-second preview only covers part of a song, and the app does not claim a time signature from audio because short clips cannot reliably tell 3 from 4 beats per bar.
+On 24 well-known songs, the detected key matched the published key exactly for 20 and was the app's first alternative for 3 more (mostly relative major/minor pairs, which share the same notes). Audio results are estimates: the app always shows how sure it is, offers alternatives, and lets you correct the key or type the real chords. Typed chords give an exact analysis. A 30-second preview only covers part of a song, and the app does not claim a time signature from audio because short clips cannot reliably tell 3 from 4 beats per bar.
 
 ## Develop
 

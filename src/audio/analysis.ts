@@ -57,8 +57,6 @@ function spectralPeaks(mag: Float32Array, binHz: number, minBin: number, maxPeak
 export interface Chromagram {
   /** One 12-bin pitch-class vector per frame, C = 0. */
   frames: Float32Array[];
-  /** The same, from bass notes only (below about C4). */
-  bass: Float32Array[];
   /** Frame energy (sum of peak amplitudes) for silence detection. */
   energy: number[];
   frameTime: number;
@@ -66,8 +64,6 @@ export interface Chromagram {
   /** How far the recording's tuning sits from A = 440 Hz, in cents. */
   tuningCents: number;
 }
-
-const BASS_MAX_HZ = 260;
 
 export function computeChromagram(samples: Float32Array, rate = ANALYSIS_RATE, size = 8192, hop = 2048): Chromagram {
   const binHz = rate / size;
@@ -90,11 +86,9 @@ export function computeChromagram(samples: Float32Array, rate = ANALYSIS_RATE, s
   }
   const tuningCents = (Math.atan2(sy, sx) / (2 * Math.PI)) * 100;
   const frames: Float32Array[] = [];
-  const bass: Float32Array[] = [];
   const energy: number[] = [];
   for (const peaks of allPeaks) {
     const v = new Float32Array(12);
-    const b = new Float32Array(12);
     let e = 0;
     for (const p of peaks) {
       const midi = 69 + 12 * Math.log2(p.freq / 440) - tuningCents / 100;
@@ -102,14 +96,12 @@ export function computeChromagram(samples: Float32Array, rate = ANALYSIS_RATE, s
       const d = midi - nearest;
       const w = Math.cos((Math.PI * d) / 1.33) ** 2;
       v[mod12(nearest)] += p.amp * w;
-      if (p.freq < BASS_MAX_HZ) b[mod12(nearest)] += p.amp * w;
       e += p.amp;
     }
     frames.push(v);
-    bass.push(b);
     energy.push(e);
   }
-  return { frames, bass, energy, frameTime: size / rate, hopTime: hop / rate, tuningCents };
+  return { frames, energy, frameTime: size / rate, hopTime: hop / rate, tuningCents };
 }
 
 export function normalize(v: ArrayLike<number>): number[] {
@@ -120,14 +112,11 @@ export function normalize(v: ArrayLike<number>): number[] {
 }
 
 /** Overall pitch-class profile, louder frames counting more. */
-export function globalProfile(chroma: Chromagram, which: 'frames' | 'bass' = 'frames'): number[] {
+export function globalProfile(chroma: Chromagram): number[] {
   const sum = new Array(12).fill(0);
-  chroma[which].forEach((f, idx) => {
-    let total = 0;
-    for (let i = 0; i < 12; i++) total += f[i];
-    if (total <= 0) return;
+  chroma.frames.forEach((f, idx) => {
     const n = normalize(f);
-    const loud = Math.sqrt(Math.max(0, which === 'bass' ? total : chroma.energy[idx]));
+    const loud = Math.sqrt(Math.max(0, chroma.energy[idx]));
     for (let i = 0; i < 12; i++) sum[i] += n[i] * loud;
   });
   return sum;
@@ -427,13 +416,12 @@ export function analyzeSamples(samples: Float32Array, rate = ANALYSIS_RATE): Aud
   const rhythm = analyzeRhythm(x, rate);
   const bc = beatSyncChroma(chroma, rhythm.beats, duration);
   const profile = globalProfile(chroma);
-  const bassProfile = globalProfile(chroma, 'bass');
 
   const firstPass = labelsToEvents(recognizeChords(bc), bc.starts);
-  const key = estimateKeyFromAudio(profile, firstPass, 0.5, bassProfile);
+  const key = estimateKeyFromAudio(profile, firstPass);
   const labels = recognizeChords(bc, key.best.key);
   const chords = labelsToEvents(labels, bc.starts);
-  const finalKey = estimateKeyFromAudio(profile, chords, 0.5, bassProfile);
+  const finalKey = estimateKeyFromAudio(profile, chords);
   const maxP = Math.max(...profile, 1e-9);
   return {
     duration,

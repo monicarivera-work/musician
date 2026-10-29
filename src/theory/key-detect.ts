@@ -155,13 +155,8 @@ export function estimateKeyFromChords(events: ChordEvent[]): KeyEstimate {
 }
 
 /** Combine audio pitch evidence with recognized chords. */
-export function estimateKeyFromAudio(chroma: number[], events: ChordEvent[], chordWeight = 0.5, bass?: number[]): KeyEstimate {
-  let a = zscore(scoreKeysFromChroma(chroma));
-  if (bass) {
-    // The home note dominates the bass line, so bass evidence gets its own vote.
-    const b = zscore(scoreKeysFromChroma(bass));
-    a = a.map((v, i) => 0.6 * v + 0.4 * b[i]);
-  }
+export function estimateKeyFromAudio(chroma: number[], events: ChordEvent[], chordWeight = 0.5): KeyEstimate {
+  const a = zscore(scoreKeysFromChroma(chroma));
   if (!events.length) return estimateFromScores(a);
   const c = zscore(scoreKeysFromChords(events, false));
   return estimateFromScores(a.map((v, i) => (1 - chordWeight) * v + chordWeight * c[i]));
