@@ -140,8 +140,8 @@ export function SongScreen() {
                   if (id === 'search') requestAnimationFrame(() => document.getElementById('song-q')?.focus());
                 }}
               >
-                <Icon size={20} />
-                {id === 'search' && <span>Another song</span>}
+                <Icon size={id === 'search' ? 20 : 18} />
+                <span>{id === 'search' ? 'Another song' : label}</span>
               </button>
             ))}
           </div>

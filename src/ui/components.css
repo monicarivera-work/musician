@@ -170,6 +170,14 @@
   font-weight: 850;
 }
 
+/* Tighter phone ladders: keep each syllable inside its own cell, clear of the rung above. */
+@media (max-width: 719px) {
+  .ladder__solfa {
+    font-size: 15px;
+    top: -16px;
+  }
+}
+
 .ladder__label {
   position: absolute;
   left: var(--label-x);
