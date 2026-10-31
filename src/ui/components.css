@@ -1,0 +1,539 @@
+/* ---------- Note and chord names ---------- */
+
+.notename,
+.chordname {
+  white-space: nowrap;
+}
+
+.accidental {
+  display: inline-block;
+  margin-left: 0.04em;
+  margin-right: 0.02em;
+}
+
+.octave {
+  font-size: 0.55em;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  vertical-align: baseline;
+  position: relative;
+  bottom: -0.1em;
+  margin-left: 0.06em;
+  color: var(--ink-3);
+}
+
+.chordname__q {
+  font-size: 0.78em;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- The Modulator (chart ladder) ---------- */
+
+.ladder {
+  margin: 0;
+  max-width: 100%;
+}
+
+.ladder__chart {
+  position: relative;
+  height: var(--ladder-h);
+  animation: unroll 720ms var(--ease-out) both;
+}
+
+/* The chart unrolls downward like a pull-down classroom chart; the final
+   inset is negative so labels above and beside the chart are never clipped. */
+@keyframes unroll {
+  from {
+    clip-path: inset(-48px -64px 100% -64px);
+  }
+  to {
+    clip-path: inset(-48px -64px -48px -64px);
+  }
+}
+
+.ladder__svg {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+}
+
+.ladder__col {
+  fill: var(--cobalt);
+}
+
+.ladder__rung {
+  stroke: var(--rung);
+  stroke-width: 2;
+}
+
+.ladder__rung--home {
+  stroke-width: 5;
+  stroke: #fff;
+}
+
+.ladder__tick {
+  stroke: var(--rung-faint);
+  stroke-width: 2;
+}
+
+.ladder__lead {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+
+.ladder__side {
+  fill: var(--cobalt-wash);
+}
+
+.ladder__side-rung {
+  stroke: var(--cobalt);
+  stroke-opacity: 0.55;
+  stroke-width: 1.5;
+}
+
+.ladder__side-rung.is-home {
+  stroke-width: 3.5;
+  stroke-opacity: 0.9;
+}
+
+.ladder__changed {
+  fill: var(--pointer);
+  stroke: #131a2e;
+  stroke-width: 1.2;
+}
+
+.ladder__changed-note {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 12px;
+  fill: #131a2e;
+}
+
+.ladder__side-solfa {
+  font-family: var(--font-display);
+  font-weight: 750;
+  font-size: 11px;
+  fill: var(--cobalt-ink);
+}
+
+.ladder__pointer line {
+  stroke: var(--pointer);
+  stroke-width: 6;
+}
+
+.ladder__pointer path {
+  fill: var(--pointer);
+  stroke: #131a2e;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.ladder__side-label {
+  position: absolute;
+  top: -30px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: var(--cobalt-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.ladder__row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  display: flex;
+  align-items: center;
+}
+
+.ladder__solfa {
+  position: absolute;
+  left: calc(var(--col-x) + 9px);
+  top: -1.3em;
+  color: var(--on-cobalt);
+  font-style: normal;
+  font-weight: 650;
+  font-size: 1.0625rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.ladder__row.is-home .ladder__solfa {
+  font-weight: 850;
+}
+
+/* Tighter phone ladders: keep each syllable inside its own cell, clear of the rung above. */
+@media (max-width: 719px) {
+  .ladder__solfa {
+    font-size: 15px;
+    top: -16px;
+  }
+}
+
+.ladder__label {
+  position: absolute;
+  left: var(--label-x);
+  bottom: 3px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding-right: 6px;
+  background: var(--paper);
+  line-height: 1;
+}
+
+.ladder__note {
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 1;
+}
+
+.ladder__row.is-home .ladder__note {
+  font-weight: 850;
+  color: var(--cobalt-ink);
+}
+
+.ladder__step {
+  font-size: 0.75rem;
+  font-weight: 650;
+  color: var(--ink-3);
+}
+
+.ladder__row.is-home .ladder__step {
+  color: var(--cobalt-ink);
+}
+
+.ladder__mark {
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  display: flex;
+  gap: 4px;
+  background: var(--paper);
+  padding-left: 6px;
+}
+
+.ladder__hit {
+  position: absolute;
+  left: var(--col-x);
+  width: var(--col-w);
+  top: -15px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 2px;
+}
+
+.ladder__hit:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.ladder__hit:active {
+  background: rgba(255, 197, 61, 0.45);
+}
+
+.ladder__gap {
+  position: absolute;
+  left: var(--gutter-x);
+  width: calc(var(--col-x) - var(--gutter-x) - 6px);
+  transform: translateY(-50%);
+  text-align: right;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ink-3);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.ladder__gap.is-half {
+  color: var(--cobalt-ink);
+  font-weight: 750;
+}
+
+.ladder__caption {
+  margin-top: var(--s3);
+  font-size: 0.875rem;
+  color: var(--ink-2);
+  max-width: 46ch;
+}
+
+.mark-chord {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 0 6px;
+  border-radius: 3px;
+  background: var(--role-fill);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  line-height: 1;
+}
+
+.mark-chord.role--borrowed,
+.mark-chord.role--secondary,
+.mark-chord.role--outside {
+  background: var(--paper-raised);
+  color: var(--ink);
+  border: 1.5px dashed var(--outside);
+}
+
+/* ---------- Singing ladder ---------- */
+
+.singladder {
+  position: relative;
+  width: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.singladder__field {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--label-w);
+  right: 0;
+  background: var(--cobalt);
+  overflow: hidden;
+}
+
+.singladder__tick {
+  position: absolute;
+  left: 0;
+  width: 10px;
+  height: 0;
+  border-top: 2px solid var(--rung-faint);
+}
+
+.singladder__rung {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  border-top: 2px solid var(--rung);
+  transform: translateY(-1px);
+}
+
+.singladder__rung.is-home {
+  border-top-width: 4px;
+  transform: translateY(-2px);
+}
+
+.singladder__rung.is-target {
+  border-top: 2px dashed var(--pointer);
+}
+
+.singladder__rung.is-landed {
+  border-top-color: #fff;
+}
+
+.singladder__time {
+  position: absolute;
+  right: 44px;
+  top: -22px;
+  padding: 1px 6px;
+  background: #fff;
+  color: #131a2e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 2px;
+}
+
+.singladder__label {
+  position: absolute;
+  left: 0;
+  width: calc(var(--label-w) - 10px);
+  transform: translateY(-50%);
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 5px;
+  line-height: 1;
+}
+
+.singladder__label .serif {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.singladder__label .solfa {
+  font-size: 0.8125rem;
+  color: var(--ink-3);
+}
+
+.singladder__label.is-target .serif {
+  font-weight: 850;
+  font-size: 1.3125rem;
+}
+
+.singladder__pointer {
+  position: absolute;
+  left: calc(var(--label-w) - 3px);
+  transform: translateY(-50%);
+  overflow: visible;
+}
+
+.singladder__pointer path {
+  fill: var(--pointer);
+  stroke: #131a2e;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.singladder__canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ---------- Fretboard ---------- */
+
+.fretboard {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  margin: 0 calc(var(--s4) * -1);
+  padding: 0 var(--s4) var(--s2);
+  scrollbar-width: thin;
+}
+
+.fretboard svg {
+  display: block;
+}
+
+.fretboard__wood {
+  fill: var(--paper-raised);
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+.fretboard__inlay {
+  fill: var(--rule-strong);
+}
+
+.fretboard__fret {
+  stroke: var(--ink-3);
+  stroke-width: 1.5;
+}
+
+.fretboard__nut {
+  stroke: var(--ink);
+  stroke-width: 5;
+}
+
+.fretboard__string {
+  stroke: var(--ink);
+}
+
+.fretboard__num {
+  font-size: 11px;
+  font-weight: 650;
+  fill: var(--ink-3);
+}
+
+.fretboard__dot {
+  cursor: pointer;
+}
+
+.fretboard__dot circle {
+  fill: var(--paper-raised);
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+.fretboard__dot text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11.5px;
+  fill: var(--ink);
+  pointer-events: none;
+}
+
+.fretboard__dot.is-home circle {
+  fill: var(--cobalt);
+  stroke: var(--cobalt);
+}
+
+.fretboard__dot.is-home text {
+  fill: #fff;
+}
+
+.fretboard__dot:hover circle {
+  stroke-width: 2.5;
+}
+
+/* ---------- Chord box ---------- */
+
+.chordbox {
+  display: block;
+  overflow: visible;
+}
+
+.chordbox__fret {
+  stroke: var(--ink-3);
+  stroke-width: 1;
+}
+
+.chordbox__nut {
+  stroke: var(--ink);
+  stroke-width: 4;
+}
+
+.chordbox__string {
+  stroke: var(--ink-2);
+  stroke-width: 1.2;
+}
+
+.chordbox__dot,
+.chordbox__barre {
+  fill: var(--ink);
+}
+
+.chordbox__open {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.4;
+}
+
+.chordbox__mute {
+  font-size: 13px;
+  font-weight: 700;
+  fill: var(--ink-2);
+}
+
+.chordbox__base {
+  font-size: 11px;
+  font-weight: 700;
+  fill: var(--ink-2);
+}
+
+/* ---------- Staff ---------- */
+
+.staff {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.staff__line {
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+
+.staff__glyph {
+  fill: var(--ink);
+}
+
+.staff__note.is-active .staff__glyph {
+  fill: var(--cobalt);
+}

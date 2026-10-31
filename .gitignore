@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dev-dist/
+*.log
+.DS_Store
+coverage/
+.playwright-mcp/
+.impeccable/hook.cache.json
+.impeccable/questions/
